@@ -33,13 +33,28 @@ class _SliderUtamaState extends State<SliderUtama> {
           SizedBox(
             height: 30,
           ),
-          Card(
-            margin: EdgeInsets.only(left: 15, right: 15),
-            child: Image.network(
-                "https://image.freepik.com/free-psd/banner-template-pet-shop_23-2148436885.jpg"),
-            elevation: 10,
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(40.0)),
+          Container(
+            child: Card(
+              margin: EdgeInsets.only(left: 15, right: 15),
+              child: ClipPath(
+                child: Container(
+                  child: Image.network(
+                    "https://image.freepik.com/free-psd/banner-template-pet-shop_23-2148436885.jpg",
+                    fit: BoxFit.cover,
+                  ),
+                  height: 150,
+                  decoration: BoxDecoration(
+                      border: Border(
+                          right: BorderSide(color: Colors.green, width: 5))),
+                ),
+                clipper: ShapeBorderClipper(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(3))),
+              ),
+              elevation: 10,
+              // shape: RoundedRectangleBorder(
+              //     borderRadius: BorderRadius.circular(40.0)),
+            ),
           ),
           SizedBox(
             height: 25,
